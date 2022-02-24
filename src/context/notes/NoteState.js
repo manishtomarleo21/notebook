@@ -21,6 +21,33 @@ const NoteState = (props)=>{
           "tag": "npm runners",
           "date": "2022-02-23T19:26:29.129Z",
           "__v": 0
+        },
+        {
+          "_id": "62168a65a115db6adaabeebd",
+          "user": "621666269386efdd27f0c4e8",
+          "title": "Concurrently",
+          "description": "Both npm run and nodemon workin 2gether",
+          "tag": "npm runners",
+          "date": "2022-02-23T19:26:29.129Z",
+          "__v": 0
+        },
+        {
+          "_id": "62168a65a115db6adaabeebd",
+          "user": "621666269386efdd27f0c4e8",
+          "title": "Concurrently",
+          "description": "Both npm run and nodemon workin 2gether",
+          "tag": "npm runners",
+          "date": "2022-02-23T19:26:29.129Z",
+          "__v": 0
+        },
+        {
+          "_id": "62168a65a115db6adaabeebd",
+          "user": "621666269386efdd27f0c4e8",
+          "title": "Concurrently",
+          "description": "Both npm run and nodemon workin 2gether",
+          "tag": "npm runners",
+          "date": "2022-02-23T19:26:29.129Z",
+          "__v": 0
         }
       ]
 
