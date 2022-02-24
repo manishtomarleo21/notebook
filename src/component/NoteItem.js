@@ -9,7 +9,8 @@ const NoteItem = (props) => {
                 <div className="card-body my-3">
                     <h5 className="card-title">{note.title}</h5>
                     <p className="card-text">{note.description}</p>
-                    <a href="/" className="btn btn-primary">Delete</a>
+                    <i className="far fa-trash-alt mx-3"></i>
+                    <i className="far fa-edit mx-2"></i>
                 </div>
             </div>
         </div>
