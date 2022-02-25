@@ -71,7 +71,7 @@ const NoteState = (props)=>{
       const editNote = async (id, title, description, tag)=>{
           //APi call
           const response = await fetch(`${local}/api/notes/updatenotes/${id}`, {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.            
+            method: 'PUT', // *GET, POST, PUT, DELETE, etc.            
             headers: {
                 'auth-token':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIxNjY2MjY5Mzg2ZWZkZDI3ZjBjNGU4In0sImlhdCI6MTY0NTcyOTY4MX0.ofRnV1So-dZ9MS_57dO-x2D3rl5X-FUdnkiJWNb7gZ4', 
               'Content-Type': 'application/json'
@@ -82,17 +82,19 @@ const NoteState = (props)=>{
           });
           const json =  response.json(); // parses JSON response into native JavaScript objects
       
+          let newNotes = JSON.parse(JSON.stringify(notes))
+
           //Logic to edit in client
-        for (let index = 0; index < notes.length; index++) {
-            const element = notes[index];
+        for (let index = 0; index < newNotes.length; index++) {
+            let element = newNotes[index];
             if (element._id === id) {
                 element.title = title;
                 element.description = description;
                 element.tag = tag;
-
+                break
             }
-            
-        }
+          }
+          setNotes(newNotes)
       }
 
 
