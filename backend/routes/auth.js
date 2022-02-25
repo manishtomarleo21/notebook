@@ -64,6 +64,7 @@ router.post('/login',[
     body('password', 'Password cannot be blank.').exists(),
     // body('password', 'Password must be at least of 5 characters.').isLength({ min: 5 }),
 ], async (req, res)=>{
+    let success = false
     //If there are errors in validations send bad request
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -74,12 +75,15 @@ router.post('/login',[
         let user = await User.findOne({email})
         //if user mail in incorrect
         if(!user){
+            success = false
             return res.status(500).send({error:"Please try to login with correct mail ID."})
         }
         let passwordCompare = await bcrypt.compare(password, user.password);
         //if user mail in incorrect
         if(!passwordCompare){
-            return res.status(500).send({error:"Please try to login with credentials."})
+            success = false
+            return res.status(500).send({success, error:"Please try to login with credentials."})
+
         }
 
         //if both correct
@@ -89,9 +93,9 @@ router.post('/login',[
             }
         } 
         const authToken = jwt.sign(data, JWT_SECRET);
-        
+        success = true
         //sending the authentication token
-        res.json({authToken})
+        res.json({success, authToken})
         
 
 

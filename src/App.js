@@ -9,6 +9,8 @@ import Home from './component/Home';
 import About from './component/About';
 import NoteState from './context/notes/NoteState';
 import Alert from './component/Alert';
+import Login from './component/Login';
+import SignUp from './component/SignUp';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Routes>
             <Route exact path='/' element={<Home />} />
             <Route exact path='/about' element={<About />} />
+            <Route exact path='/login' element={<Login />} />
+            <Route exact path='/signup' element={<SignUp />} />
           </Routes>
         </div>
       </Router>
